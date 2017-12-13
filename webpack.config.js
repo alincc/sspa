@@ -15,6 +15,8 @@ module.exports = {
 			'@angular/platform-browser-dynamic',
 			'@angular/router',
 			'reflect-metadata',
+			'angular',
+			'angular-ui-router',
 			/* Just one version of react, too. react-router is fine to have multiple versions of,
 			 * though, so no need to put it in common dependencies
 			 */
@@ -38,6 +40,15 @@ module.exports = {
 				test: /\.tsx?$/,
 				loader: 'ts-loader',
 			},
+            {
+                test: /\.(html)$/,
+                use: {
+                    loader: 'html-loader',
+                    options: {
+                        attrs: [':data-src']
+                    }
+                }
+            }
 		],
 	},
 	node: {
