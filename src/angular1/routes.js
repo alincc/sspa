@@ -16,7 +16,9 @@ angular
 		url: '/app3',
 		template: '<root />',
 	})
-
+	
+	$locationProvider.hashPrefix('');
+	
 	.state('root.gifs', {
 		url: '/gifs',
 		template: '<gifs />',
