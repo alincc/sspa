@@ -10,6 +10,9 @@ angular
 		enabled: false,
 		requireBase: false,
 	});
+	
+	$locationProvider.hashPrefix('');
+	
 
 	$stateProvider
 	.state('root', {
@@ -17,7 +20,6 @@ angular
 		template: '<root />',
 	})
 	
-	$locationProvider.hashPrefix('');
 	
 	.state('root.gifs', {
 		url: '/gifs',
