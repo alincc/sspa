@@ -10,6 +10,9 @@ angular
 		enabled: false,
 		requireBase: false,
 	});
+	
+	$locationProvider.hashPrefix('');
+	
 
     $locationProvider.hashPrefix('');
 
@@ -18,7 +21,8 @@ angular
 		url: '/app3',
 		template: '<root />',
 	})
-
+	
+	
 	.state('root.gifs', {
 		url: '/gifs',
 		template: '<gifs />',
