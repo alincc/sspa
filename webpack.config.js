@@ -17,6 +17,7 @@ module.exports = {
 			'reflect-metadata',
 			'angular',
 			'angular-ui-router',
+			'zone.js/dist/zone.js',
 			/* Just one version of react, too. react-router is fine to have multiple versions of,
 			 * though, so no need to put it in common dependencies
 			 */
@@ -27,6 +28,7 @@ module.exports = {
 	output: {
 		publicPath: '/dist/',
 		filename: '[name].js',
+        chunkFilename:"[name].bundle.js",
 		path: path.resolve(__dirname, 'dist'),
 	},
 	module: {
@@ -37,8 +39,8 @@ module.exports = {
 				loader: 'babel-loader',
 			},
 			{
-				test: /\.tsx?$/,
-				loader: 'ts-loader',
+				test: /\.ts?$/,
+				loaders: ['awesome-typescript-loader',  'angular2-template-loader'],
 			},
             {
                 test: /\.(html)$/,
@@ -58,7 +60,9 @@ module.exports = {
 		modules: [
 			__dirname,
 			'node_modules',
+
 		],
+        extensions: ['.js', '.ts']
 	},
 	plugins: [
 		new CleanWebpackPlugin(['dist']),

@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/joeldenning/simple-single-spa-webpack-example#readme",
   "devDependencies": {
+    "@types/node": "^8.5.2",
+    "angular2-template-loader": "^0.6.2",
+    "awesome-typescript-loader": "^3.4.1",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",

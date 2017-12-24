@@ -1,0 +1,33 @@
+body{
+    padding-top: 75px;
+}
+.main-content {
+    max-width: 950px;
+    margin: 0 auto;
+}
+.gallery {
+    max-width:952px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.gallery__item {
+    width: 200px;
+    height: 230px;
+    padding: 20px;
+    border: 13px solid #fff;
+    box-sizing: border-box;
+    background-color: aliceblue;
+    box-shadow: 0 0 1px black;
+    cursor: pointer;
+    transition: box-shadow .3s;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+
+.gallery__item:hover {
+    box-shadow: 0 0 10px black;
+    transition: box-shadow .3s;
+}
