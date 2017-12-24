@@ -8,7 +8,7 @@
 				This is a sample application written with Angular 1.5 and angular-ui-router.
 			</p>
 		</div>
-		<div class="movie-contant"> <strong>Movie: </strong>{{ selected }} </div>
+		
 		<div id="angular2"></div>
 
 		<div>
@@ -21,5 +21,16 @@
 		</div>
 		<div class="row">
 			<ui-view />
+		</div>
+	</div>
+	<div class="modal__screen" ng-class="{'showModal':showModal}" ng-click="hideModal()"> 
+		<div class="modal__content">
+			<a href="#" class="modal--close-btn" ng-click="hideModal($event)">X</a>
+			<div class="movie-contant"> 
+				(AngularJS Modal)
+				<h4 class="movie-title">{{ movieTitle }} </h4>
+				<p>{{ movieDescription }}</p>
+				<!-- <img src="images/popcorn.jpg" width="340" alt=""> -->
+			</div>
 		</div>
 	</div>

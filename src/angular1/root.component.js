@@ -18,16 +18,30 @@ angular
 	controllerAs: 'vm',
 	controller($timeout, $scope) {
 		const vm = this;
-		$scope.selected = '';
+		$scope.movieTitle = '';
+		$scope.movieDescription = '';
 		$scope.showModal = false;
 
         messageBusSubject.subscribe((itemData)=>{
 			if(itemData.action === 'OPEN_GALLERY_ITEM'){
-				$scope.selected = data.find((item)=> item.id === itemData.data).movie
+				const movieData = data.find((item)=> item.id === itemData.data);
+				$scope.movieTitle = movieData.movie;
+				$scope.movieDescription = movieData.long_description;
 				$scope.showModal = true;
-				$scope.$apply();
+
+				try {
+					$scope.$digest();
+				}catch(e){}
+				
 			}
 		});
+
+		$scope.hideModal = function(event){
+			if(event){
+				event.preventDefault();
+			}
+			$scope.showModal = false;
+		}
 
 
 		function test(){
