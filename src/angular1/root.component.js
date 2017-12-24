@@ -15,9 +15,12 @@ angular
 		let subscription;
 
 
+        vm.$onInit = () => {
+
+        };
 
 		vm.$onDestroy = () => {
-			subscription.dispose();
+
 		}
 	}
 })

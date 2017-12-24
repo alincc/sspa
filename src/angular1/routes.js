@@ -11,6 +11,8 @@ angular
 		requireBase: false,
 	});
 
+    $locationProvider.hashPrefix('');
+
 	$stateProvider
 	.state('root', {
 		url: '/app3',
@@ -26,4 +28,5 @@ angular
 		url: '/lorem-ipsum',
 		template: '<lorem-ipsum />',
 	})
+
 });
