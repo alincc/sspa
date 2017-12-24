@@ -18,14 +18,17 @@ angular
 	controllerAs: 'vm',
 	controller($timeout, $scope) {
 		const vm = this;
-		$scope.selected = 'hihihih';
+		$scope.selected = '';
+		$scope.showModal = false;
 
         messageBusSubject.subscribe((itemData)=>{
-        	//console.log("sd",itemData,data, data.find((item)=> item.id === itemData.data));
-        	// alert(data.find((item)=> item.id === itemData.data).movie)
-			$scope.selected = data.find((item)=> item.id === itemData.data).movie
-			console.log($scope.selected)
+			if(itemData.action === 'OPEN_GALLERY_ITEM'){
+				$scope.selected = data.find((item)=> item.id === itemData.data).movie
+				$scope.showModal = true;
+				$scope.$apply();
+			}
 		});
+
 
 		function test(){
             declareChildApplication('angular2', ()=> import("./../angular4/angular4App.js"), hashPrefix('/'));

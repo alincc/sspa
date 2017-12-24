@@ -20,10 +20,12 @@ export class HelloComponent {
     constructor(@Inject(NgZone) ngZone:NgZone){
         this.ngZone = ngZone;
         this.galleryData = data;
-        console.log("Data", data);
     }
     openItem(id: number){
-        console.log("card id", id);
-        messageBusSubject.next({action:'OPEN_GALLERY_ITEM', data:id});
+        this.ngZone.runOutsideAngular(()=>{
+           messageBusSubject.next({action:'OPEN_GALLERY_ITEM', data:id});
+           return true;
+        })
+        
     }
 }
