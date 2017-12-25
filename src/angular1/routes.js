@@ -1,6 +1,7 @@
 import angular from 'angular';
 import './root.component.js';
 import './gifs.component.js';
+import './ng4.component.js';
 import './lorem-ipsum.component.js';
 
 angular
@@ -31,6 +32,11 @@ angular
 	.state('root.lorem-ipsum', {
 		url: '/lorem-ipsum',
 		template: '<lorem-ipsum />',
+	})
+
+	.state('root.ng4component', {
+		url: '/ng4component',
+		template:'<ng4component />',
 	})
 
 });

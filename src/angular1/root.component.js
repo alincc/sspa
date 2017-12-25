@@ -42,14 +42,7 @@ angular
 			}
 			$scope.showModal = false;
 		}
-
-
-		function test(){
-            declareChildApplication('angular2', ()=> import("./../angular4/angular4App.js"), hashPrefix('/'));
-		}
-
-		test();
-
+	
 		vm.frameworkInspector = false;
 		vm.styles = {};
 

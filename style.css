@@ -28,6 +28,7 @@ body{
 }
 .angularjs-wrapper {
     display: flex;
+    min-height: 500px;
 }
 
 .gallery__item:hover {
