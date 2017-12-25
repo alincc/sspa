@@ -1,9 +1,10 @@
 body{
-    padding-top: 75px;
+    padding: 75px 0 0 0;
+    margin:0;
 }
 .main-content {
-    max-width: 950px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
 }
 .gallery {
     max-width:952px;
@@ -25,7 +26,9 @@ body{
     margin-bottom: 30px;
     overflow: hidden;
 }
-
+.angularjs-wrapper {
+    display: flex;
+}
 
 .gallery__item:hover {
     box-shadow: 0 0 10px black;
@@ -96,4 +99,17 @@ body{
 
 .movie-title {
     font-size: 24px;
+}
+.sidebar {
+    width: 210px;
+    top: 75px;
+    flex-shrink: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 10px;
+    background-color: aliceblue;
+}
+.container {
+    width: 100%;
+    text-align: center;
 }
